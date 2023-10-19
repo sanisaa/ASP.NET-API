@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of datas">
+        <th>{{contact.id}}</th>
+        <th>{{contact.fullName}}</th>
+        <td>{{contact.email}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.address}}</td>
+        <a [routerLink]="['/edit', contact.id]">Edit</a>
+        <button type="button" class="btn btn-danger" (click)="deleteData(contact.id)">Delete</button>
+      </tr>
+    </tbody>
+  </table>
+  

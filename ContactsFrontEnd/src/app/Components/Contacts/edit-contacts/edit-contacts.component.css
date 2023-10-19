@@ -1,0 +1,5 @@
+/* Add styling for readonly inputs */
+input[readonly] {
+    background-color: #f0f0f0; /* You can adjust the background color as needed */
+  }
+  

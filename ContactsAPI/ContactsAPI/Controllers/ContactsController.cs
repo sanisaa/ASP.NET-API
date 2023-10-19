@@ -27,6 +27,15 @@ namespace ContactsAPI.Controllers
         {
             return Ok(await dbContext.Contacts.ToListAsync()); //talk to contacts table and return list
         }
+        [HttpGet]
+        [Route("{id:guid}")]
+        public async Task<IActionResult> GetContact([FromRoute] Guid id)
+
+
+        {
+            var data = await dbContext.Contacts.FindAsync(id);
+            return Ok(data);
+        }
 
         [HttpGet("noid")]
         public async Task<IActionResult> GetCon()
