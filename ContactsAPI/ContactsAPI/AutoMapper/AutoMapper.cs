@@ -8,7 +8,9 @@ namespace ContactsAPI.AutoMapper
         public AutoMapper()
         {
             CreateMap<AddContactRequest, Contacts>();
-            
+
+            CreateMap<Contacts, AddContactRequest>();
+
         }
     }
 }

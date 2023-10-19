@@ -28,6 +28,19 @@ namespace ContactsAPI.Controllers
             return Ok(await dbContext.Contacts.ToListAsync()); //talk to contacts table and return list
         }
 
+        [HttpGet("noid")]
+        public async Task<IActionResult> GetCon()
+
+        {
+            var existingContact = await dbContext.Contacts.ToListAsync();
+            
+            
+            var add = _mapper.Map<List<AddContactRequest>>(existingContact);
+            return Ok(add);
+
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> AddContacts(AddContactRequest addContactRequest)
         {
